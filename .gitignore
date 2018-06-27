@@ -2,7 +2,7 @@
 # Unity folders and files
 ###
 /[Bb]uild/
-/[Ll]ibrary/
+BGF/[Ll]ibrary/
 /[Ll]ocal[Cc]ache/
 /[Oo]bj/
 BGF/[Tt]emp/
