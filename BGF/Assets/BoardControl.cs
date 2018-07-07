@@ -5,7 +5,7 @@ using UnityEngine;
 public class BoardControl : MonoBehaviour {
     public GameObject tile;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         //Make 5 tiles
         for (int i = 0; i == 5; i++)
         {
