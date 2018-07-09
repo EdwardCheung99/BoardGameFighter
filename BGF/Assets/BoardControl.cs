@@ -1,20 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoardControl : MonoBehaviour {
-    public GameObject tile;
-	// Use this for initialization
-	void Awake () {
-        //Make 5 tiles
-        for (int i = 0; i == 5; i++)
+    public GameObject canCV;
+    // Use this for initialization
+    void Start () {
+        //Make 10 tiles
+        for (int i = 0; i == 10; i++)
         {
-            GameObject b;
+            GameObject b = new GameObject();
             //Tile Creation
-            b = Instantiate(tile, new Vector3(i * 2.0f, 0, 0), Quaternion.identity);
-            tileSetup pn = b.GetComponent<tileSetup>(); //Allows me to pull variables from the current tile
-               pn.posNum = i;
-            if (i == 0 || i == 5)
+            RectTransform Rect = b.AddComponent<RectTransform>();
+            tileSetup pn = b.AddComponent<tileSetup>(); //Allows me to pull variables from the current tile
+            Rect.sizeDelta = new Vector2(200.0f * i, 100.0f);
+
+            pn.posNum = i;
+            if (i == 0 || i == 10)
             {
                pn.dmgMod  = 1; //Corner = +1 dmg
             }
