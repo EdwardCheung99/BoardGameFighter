@@ -29,7 +29,5 @@ public class BoardControl : MonoBehaviour {
 		
 	}
 
-    void BeginNeutralPhase (){
-        
-    }
+
 }
