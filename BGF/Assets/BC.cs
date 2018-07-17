@@ -26,6 +26,7 @@ public class BC : MonoBehaviour
                 Button TPos = Instantiate(tile) as Button;
                 TPos.transform.position = new Vector3(x - 247.5f, 0, 0);
                 TPos.transform.SetParent(Scrin.transform, false);
+                TPos.GetComponentInChildren<Text>().text = "";
         }
     }
 
