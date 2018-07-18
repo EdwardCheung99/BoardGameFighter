@@ -17,7 +17,10 @@ public class BC : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Debug.Log("Yay!");
+        }
     }
 
     void CreateWorld()
@@ -39,23 +42,25 @@ public class BC : MonoBehaviour
 
     void BeginNeutral()
     {
-        //Begin by making GO for text to tell players what to do
+        //Begin by making text to signal beginning of neutral
         Text StartText_Text;
         RectTransform StartText_RectTrans;
 
-        GameObject newGO = new GameObject("NeutralText");
+        GameObject newGO = new GameObject("NeutralText"); //make GO for text
         newGO.transform.SetParent(Scrin.transform);
-
         Text StartText = newGO.AddComponent<Text>();
         StartText.text = "Neutral Phase Begin!";
 
         StartText_Text = StartText.GetComponent<Text>();
         StartText_RectTrans = StartText.GetComponent<RectTransform>();
-
         StartText_Text.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
         StartText_Text.fontSize = 30;
         StartText_RectTrans.sizeDelta = new Vector2(StartText_Text.fontSize * 10, 100);
         StartText.rectTransform.localPosition = new Vector3(0f, 0f);
+        Destroy(newGO, 2.0f);
+
+        //Guess phase begins, players select how they choose to block
+        
     }
 
 }
