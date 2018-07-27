@@ -7,7 +7,9 @@ public class BC : MonoBehaviour
 {
     public Button tile;
     public Canvas Scrin;
-    
+    public float TimeSt;
+    public float TimeLen = 3f;
+    public string guess = "";
 
     void Start()
     {
@@ -17,9 +19,9 @@ public class BC : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Time.time> TimeSt + TimeLen)
         {
-            Debug.Log("Yay!");
+            //change text
         }
     }
 
@@ -40,6 +42,17 @@ public class BC : MonoBehaviour
         }
     }
 
+    void OnGUI()
+    {
+        if (Event.current.Equals(Event.KeyboardEvent("k")))
+        {
+            guess = "high";
+            Debug.Log("Guess done");
+            //After this is inputted, it switches to the next scene w/ guess variables
+        }
+
+    }
+
     void BeginNeutral()
     {
         //Begin by making text to signal beginning of neutral
@@ -57,10 +70,16 @@ public class BC : MonoBehaviour
         StartText_Text.fontSize = 30;
         StartText_RectTrans.sizeDelta = new Vector2(StartText_Text.fontSize * 10, 100);
         StartText.rectTransform.localPosition = new Vector3(0f, 0f);
-        Destroy(newGO, 2.0f);
 
         //Guess phase begins, players select how they choose to block
+
         
+
+        if (guess != "")
+        {
+            //go to next scene
+        }
+
     }
 
 }
