@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BC : MonoBehaviour
 {
@@ -16,9 +17,10 @@ public class BC : MonoBehaviour
     public bool GuessTime1 = true;
     public bool GuessTime2 = true;
 
+
     void Start()
     {
-        
+
         BeginNeutral();
         StartCoroutine(BeginToGuess());
     }
@@ -58,13 +60,15 @@ public class BC : MonoBehaviour
                 Debug.Log("P1 Guess done it is " + guess1);
                 GuessTime1 = false;
                 //After this is inputted, it switches to the next scene w/ guess variables
+                SceneManager.LoadScene("BOard");
             }
 
-            if ((Event.current.Equals(Event.KeyboardEvent("a"))) && GuessTime2) 
+            if ((Event.current.Equals(Event.KeyboardEvent("a"))) && GuessTime2)
             {
                 guess2 = "high";
                 Debug.Log("P2 Guess done, it is " + guess2);
                 GuessTime2 = false;
+                SceneManager.LoadScene("BOard");
             }
         }
 
