@@ -60,7 +60,7 @@ public class BC : MonoBehaviour
                 Debug.Log("P1 Guess done it is " + guess1);
                 GuessTime1 = false;
                 //After this is inputted, it switches to the next scene w/ guess variables
-                SceneManager.LoadScene("BOard");
+
             }
 
             if ((Event.current.Equals(Event.KeyboardEvent("a"))) && GuessTime2)
@@ -68,8 +68,15 @@ public class BC : MonoBehaviour
                 guess2 = "high";
                 Debug.Log("P2 Guess done, it is " + guess2);
                 GuessTime2 = false;
-                SceneManager.LoadScene("BOard");
+
             }
+
+            if ((guess1 != "") && (guess2 != ""))
+            {
+                SceneManager.LoadScene("BOard");
+                //go to next scene
+            }
+
         }
 
     }
@@ -95,11 +102,7 @@ public class BC : MonoBehaviour
 
         //Guess phase begins, players select how they choose to block        
 
-        if ((guess1 != "") && (guess2 != ""))
-        {
-            //go to next scene
-        }
+
 
     }
-
 }
