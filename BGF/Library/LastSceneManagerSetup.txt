@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/BOard.unity
+- path: Assets/BGF.unity
   isLoaded: 1
   isActive: 1

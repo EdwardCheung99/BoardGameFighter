@@ -16,7 +16,7 @@ public class BC : MonoBehaviour
     public bool GuessTime = false;
     public bool GuessTime1 = true;
     public bool GuessTime2 = true;
-
+    
 
     void Start()
     {
