@@ -9,18 +9,18 @@ public class BC : MonoBehaviour
     public Button tile;
     public Canvas Scrin;
     public float TimeLen = 3f;
-    public string guess1 = "";
-    public string guess2 = "";
+    //public string guess1 = "";
+    //public string guess2 = "";
     public Text NeutralText;
     public string Neutral2 = "Please make your guess.";
     public bool GuessTime = false;
     public bool GuessTime1 = true;
     public bool GuessTime2 = true;
-    
 
     void Start()
     {
-
+        Variables.guess1 = "";
+        Variables.guess2 = "";
         BeginNeutral();
         StartCoroutine(BeginToGuess());
     }
@@ -52,12 +52,14 @@ public class BC : MonoBehaviour
 
     void OnGUI()
     {
+        
+
         if (GuessTime == true)
         {
             if ((Event.current.Equals(Event.KeyboardEvent("j"))) && GuessTime1)
             {
-                guess1 = "high";
-                Debug.Log("P1 Guess done it is " + guess1);
+                Variables.guess1 = "high";
+                Debug.Log("P1 Guess done it is " + Variables.guess1);
                 GuessTime1 = false;
                 //After this is inputted, it switches to the next scene w/ guess variables
 
@@ -65,13 +67,13 @@ public class BC : MonoBehaviour
 
             if ((Event.current.Equals(Event.KeyboardEvent("a"))) && GuessTime2)
             {
-                guess2 = "high";
-                Debug.Log("P2 Guess done, it is " + guess2);
+                Variables.guess2 = "high";
+                Debug.Log("P2 Guess done, it is " + Variables.guess2);
                 GuessTime2 = false;
 
             }
 
-            if ((guess1 != "") && (guess2 != ""))
+            if ((Variables.guess1 != "") && (Variables.guess2 != ""))
             {
                 SceneManager.LoadScene("BOard");
                 //go to next scene

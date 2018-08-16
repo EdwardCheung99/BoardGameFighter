@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class Variables : MonoBehaviour {
 
     public static string guess1;
     public static string guess2;

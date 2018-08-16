@@ -18,8 +18,6 @@ public class BoardControl : MonoBehaviour
     void Start()
     {
         var script = GetComponent<BC>();
-        Debug.Log(script.guess1);
-        Debug.Log(script.guess2);
         CreateWorld();
     }
 
